@@ -1,0 +1,142 @@
+.reading-game {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.alphabet-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 90%;
+}
+
+.alphabet-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  border-radius: 50%;
+  border: 2px solid #041e3a56;
+  transition: all 0.3s ease;
+}
+
+.alphabet-letter.active {
+  background-color: #27ae60;
+  color: white;
+  border-color: #27ae60;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.alphabet-letter.inactive {
+  background-color: #bdc3c7;
+  color: #7f8c8d;
+  border-color: #95a5a6;
+}
+
+.letter-display {
+  background-color: #f0f0f0;
+  padding: 3rem;
+  border: 3px solid #041e3a56;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.letter-pair {
+  font-size: calc(var(--font-size-extra-large) * 1.5);
+  font-weight: bold;
+  color: #192f47;
+  font-family: 'Arial', cursive, sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-controls {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.next-button,
+.next-level-button {
+  padding: 12px 24px;
+  font-size: var(--font-size-medium);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.next-button {
+  background-color: #cfd3d6;
+  color: rgb(0, 0, 0);
+}
+
+.next-button:hover {
+  background-color: #2980b9;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.next-level-button {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.next-level-button:hover:not(:disabled) {
+  background-color: #8e44ad;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.next-level-button:disabled {
+  background-color: #bdc3c7;
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.game-info p {
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Animation for new pairs */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.letter-pair {
+  animation: fadeIn 0.5s ease;
+}

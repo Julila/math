@@ -1,0 +1,10 @@
+/* Game completed styles */
+.game-completed {
+  text-align: center;
+  padding: 2rem;
+}
+
+.game-completed h2 {
+  font-size: var(--font-size-extra-large);
+  margin-bottom: 1rem;
+}

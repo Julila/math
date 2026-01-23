@@ -1,0 +1,14 @@
+<div class="score-section">
+  <div class="stars-container">
+    @for (star of stars; track star; let i = $index) {
+    <div
+      class="star"
+      [class.star-correct]="star === 'correct'"
+      [class.star-wrong]="star === 'wrong'"
+      [class.star-empty]="star === 'empty'"
+    >
+      <img [src]="getStarImageSrc(star)" alt="star" class="star-image" />
+    </div>
+    }
+  </div>
+</div>

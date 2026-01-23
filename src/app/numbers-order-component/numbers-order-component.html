@@ -1,0 +1,37 @@
+<div class="numbers-order-container">
+  @if (!showGameOver) {
+    <div class="header">
+      <p>Нажмите на числа в порядке от меньшего к большему:</p>
+      <app-star-score-component
+        [attemptResult]="lastAttemptResult"
+        (gameCompleted)="onGameCompleted()"
+        (startAgain)="startAgain()"
+      >
+      </app-star-score-component>
+    </div>
+
+    <div class="numbers-container">
+      @for (number of randomNumbers; track number) {
+        <button
+          class="number-btn"
+          [class.selected]="isNumberSelected(number)"
+          [class.wrong]="isWrongSelection(number)"
+          [class.disabled]="isGameComplete"
+          (click)="selectNumber(number)"
+          [disabled]="isNumberSelected(number) || isGameComplete"
+        >
+          {{ number }}
+          @if (isNumberSelected(number)) {
+            <span class="position">
+              {{ getNumberPosition(number) }}
+            </span>
+          }
+        </button>
+      }
+    </div>
+  }
+
+  @if (showGameOver) {
+    <game-over-component (startAgainClicked)="onGameOverRestart()"></game-over-component>
+  }
+</div>

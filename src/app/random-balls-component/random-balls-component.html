@@ -1,0 +1,25 @@
+<div class="game-container">
+  <app-star-score-component
+    [attemptResult]="lastAttemptResult"
+    (gameCompleted)="onGameCompleted()"
+    (startAgain)="startAgain()"
+  >
+  </app-star-score-component>
+  <!-- Игровая зона с двумя секторами -->
+
+  @if (gameCompleted) {
+    <game-over-component (startAgainClicked)="startAgain()"></game-over-component>
+  }
+
+  <!-- Wrap game content in conditional block -->
+  @if (!gameCompleted) {
+    <div class="play-zone">
+      <div class="sector left-sector">
+        <div #leftSector class="sector-content" (click)="handleSectorClick('left')"></div>
+      </div>
+      <div class="sector right-sector">
+        <div #rightSector class="sector-content" (click)="handleSectorClick('right')"></div>
+      </div>
+    </div>
+  }
+</div>

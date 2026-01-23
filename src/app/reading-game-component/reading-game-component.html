@@ -1,0 +1,28 @@
+<div class="reading-game">
+  <div class="alphabet-display">
+    <span
+      *ngFor="let letter of russianAlphabet"
+      class="alphabet-letter"
+      [class.active]="isLetterActive(letter)"
+      [class.inactive]="!isLetterActive(letter)"
+    >
+      {{ letter }}
+    </span>
+  </div>
+
+  <div class="letter-display">
+    <div class="letter-pair">
+      {{ currentPair }}
+    </div>
+  </div>
+
+  <div class="game-controls">
+    <button class="next-button" (click)="onNext()">Следущий слог</button>
+
+    <button class="next-level-button" [disabled]="!canAdvanceLevel()" (click)="onNextLevel()">
+      + Буква
+    </button>
+  </div>
+
+ 
+</div>
