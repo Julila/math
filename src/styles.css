@@ -18,12 +18,14 @@
 }
 :root {
   font-family: 'Schoolbell', 'Comic Sans MS', cursive, sans-serif;
-
+  --padding-small: 10px;
+  --padding-medium: 20px;
   --font-size-root: 24px;
   --font-size-small: 0.875rem;
   --font-size-base: 1rem;
   --font-size-medium: 1.25rem;
   --font-size-large: 1.5rem;
+  --font-size-xl: 3.5rem;
   --font-size-extra-large: 5rem;
 
   --clr-btn: hsla(204, 70%, 53%, 1);
@@ -45,6 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background: url('/img/paper.jpg'); */
 }
 
 h1,
@@ -77,4 +80,45 @@ h2 {
   background-color: var(--clr-btn-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.2);
+}
+
+.answer-btn {
+  padding: var(--padding-medium);
+  font-size: var(--font-size-xl);
+  font-family: 'PullMeOut', cursive, sans-serif;
+  font-weight: bold;
+  background-color: var(--clr-btn);
+  color: white;
+  border: 4px solid var(--clr-btn-dark);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  min-height: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.answer-btn:hover:not(:disabled) {
+  background-color: var(--clr-btn);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.answer-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.answer-btn.correct {
+  background-color: #27ae60;
+  border-color: #229954;
+  color: white;
+  animation: bounce 0.5s ease;
+}
+
+.answer-btn.incorrect {
+  background-color: #e74c3c;
+  border-color: #c0392b;
+  color: white;
+  animation: shake 0.5s ease;
 }

@@ -15,25 +15,28 @@
     <div class="game-content">
       <!-- Display circles in rows of 5 -->
       <div class="circles-container">
-        <div class="circle-row" *ngFor="let row of getRowsOfCircles()">
-          <div class="circle" *ngFor="let circle of row"></div>
-        </div>
+        @for (row of getRowsOfCircles(); track row) {
+          <div class="circle-row">
+            @for (circle of row; track circle) {
+              <div class="circle"></div>
+            }
+          </div>
+        }
       </div>
-
-      <!-- Answer options -->
       <div class="answer-section">
         <div class="answer-options">
-          <button
-            *ngFor="let option of answerOptions"
-            class="answer-btn"
-            [class.selected]="selectedAnswer === option"
-            [class.correct]="isCorrect === true && selectedAnswer === option"
-            [class.incorrect]="isCorrect === false && selectedAnswer === option"
-            (click)="selectAnswer(option)"
-            [disabled]="selectedAnswer !== null"
-          >
-            {{ option }}
-          </button>
+          @for (option of answerOptions; track option) {
+            <button
+              class="answer-btn"
+              [class.selected]="selectedAnswer === option"
+              [class.correct]="isCorrect === true && selectedAnswer === option"
+              [class.incorrect]="isCorrect === false && selectedAnswer === option"
+              (click)="selectAnswer(option)"
+              [disabled]="selectedAnswer !== null"
+            >
+              {{ option }}
+            </button>
+          }
         </div>
       </div>
     </div>

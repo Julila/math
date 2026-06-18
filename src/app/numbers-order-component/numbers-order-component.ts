@@ -12,7 +12,7 @@ import { GameOverComponent } from '../game-over-component/game-over-component';
 export class NumbersOrderComponent implements OnInit {
   private readonly GAME_SIZE = 5;
   private readonly MIN_NUMBER = 1;
-  private readonly MAX_NUMBER = 10;
+  private readonly MAX_NUMBER = 20;
 
   randomNumbers: number[] = [];
   userOrder: number[] = [];
@@ -128,7 +128,7 @@ export class NumbersOrderComponent implements OnInit {
     } else {
       this.lastAttemptResult = 'wrong';
     }
-    
+
     // Show result for 1.5 seconds, then handle next action
     setTimeout(() => {
       // Check if all stars are collected
@@ -140,7 +140,7 @@ export class NumbersOrderComponent implements OnInit {
         this.generateNewGame();
       }
     }, 1500);
-    
+
     this.onGameCompleted();
   }
 

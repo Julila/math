@@ -1,0 +1,127 @@
+.sum-numbers-container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.game-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+
+.numbers-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-card {
+  font-size: 4rem;
+  font-family: 'PullMeOut', cursive, sans-serif;
+  font-weight: bold;
+  color: #2c3e50;
+  background-color: #ecf0f1;
+  border: 4px solid #34495e;
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.number-display:hover {
+  transform: scale(1.05);
+}
+
+.plus-symbol {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 0 1rem;
+}
+
+.equals-symbol {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin: 0 1rem;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.answer-section {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.answer-options {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}

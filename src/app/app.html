@@ -1,21 +1,17 @@
 <div class="nav-zone">
-  <h1>Игра - Где больше?</h1>
+  <!-- <h1>***</h1> -->
 
-  <!-- Navbar with game mode tabs -->
   <nav class="navbar">
-    <a routerLink="/find-number" class="nav-tab">Найди число</a>
-    <a routerLink="/sum-game" class="nav-tab">Найди сумму</a>
+    <a routerLink="/random-balls" class="nav-tab"> <span class="round">1 </span> Шарики</a>
 
-    <a routerLink="/random-balls" class="nav-tab">Шарики</a>
-    <a routerLink="/number-order" class="nav-tab">Цифры по порядку</a>
-    <a routerLink="/reading-game" class="nav-tab">Читаем слоги</a>
+    <a routerLink="/find-number" class="nav-tab"> <span class="round">2 </span> Найди число</a>
+    <a routerLink="num-sum-game" class="nav-tab">
+      <span class="round">3 </span> Сумма двух чисел
+    </a>
+    <a routerLink="/sum-game" class="nav-tab"> <span class="round">4 </span>Сумма шариков</a>
 
-    <!-- <button class="nav-tab" data-range="7" data-mode="balls">Шарики до 7</button>
-    <button class="nav-tab" data-range="20" data-mode="balls">Шарики в шкафчике</button>
-
-    <button class="nav-tab active" data-range="10" data-mode="numbers">Числа до 10</button>
-    <button class="nav-tab" data-range="20" data-mode="numbers">Числа до 20</button>
-    <button class="nav-tab" data-range="100" data-mode="numbers">Числа до 100</button> -->
+    <a routerLink="/number-order" class="nav-tab"> <span class="round">5 </span>Цифры в ряд</a>
+    <a routerLink="/reading-game" class="nav-tab"> <span class="round">6 </span>Читаем слоги</a>
   </nav>
 </div>
 <div class="play-zone">

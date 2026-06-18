@@ -36,10 +36,23 @@
 .nav-tab.active:hover {
   background-color: #555;
 }
+
 .play-zone {
   flex: 1;
   width: 100vw;
   height: 100vh;
   display: flex;
   overflow: hidden;
+}
+.round {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--font-size-medium);
+  height: var(--font-size-medium);
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  font-weight: bold;
+  font-size: var(--font-size-base);
+  margin-right: 8px;
 }

@@ -1,0 +1,149 @@
+.sum-numbers-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.game-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+.grids-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.grid-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circles-container {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  min-width: 120px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-grid {
+  min-width: 200px;
+  min-height: 120px;
+}
+
+.circle-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.circle-row:last-child {
+  margin-bottom: 0;
+}
+
+.circle {
+  width: 3rem;
+  height: 3rem;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  border: 2px solid #461813;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Новые стили для позиций в левой сетке */
+.circle-position {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px dashed #bbb;
+  transition: all 0.3s ease;
+}
+
+.circle-filled {
+  background-color: #e74c3c;
+  border: 2px solid #461813;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.circle-empty {
+  background-color: transparent;
+  border: 2px dashed #ccc;
+}
+
+.plus-symbol {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+.answer-section {
+  text-align: center;
+}
+
+.answer-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.answer-btn.correct {
+  background-color: #27ae60;
+  animation: bounce 0.5s ease;
+}
+
+.answer-btn.incorrect {
+  background-color: #e74c3c;
+  animation: shake 0.5s ease;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}

@@ -1,0 +1,50 @@
+<div class="sum-numbers-container">
+  <app-star-score-component
+    [attemptResult]="lastAttemptResult"
+    (gameCompleted)="onGameCompleted()"
+    (startAgain)="startAgain()"
+  >
+  </app-star-score-component>
+
+  @if (gameCompleted) {
+    <game-over-component (startAgainClicked)="startAgain()"></game-over-component>
+  }
+
+  <!-- Game content (hidden when completed) -->
+  @if (!gameCompleted) {
+    <div class="game-content">
+      <!-- Two numbers with addition symbol -->
+      <div class="numbers-container">
+        <!-- First number -->
+        <div class="number-card">
+          {{ leftNumber }}
+        </div>
+
+        <!-- Plus symbol -->
+        <div class="plus-symbol">+</div>
+
+        <!-- Second number -->
+        <div class="number-card">
+          {{ rightNumber }}
+        </div>
+      </div>
+
+      <!-- Answer options -->
+      <div class="answer-section">
+        <div class="answer-options">
+          <button
+            *ngFor="let option of answerOptions"
+            class="answer-btn"
+            [class.selected]="selectedAnswer === option"
+            [class.correct]="isCorrect === true && selectedAnswer === option"
+            [class.incorrect]="isCorrect === false && selectedAnswer === option"
+            (click)="selectAnswer(option)"
+            [disabled]="selectedAnswer !== null"
+          >
+            {{ option }}
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>
